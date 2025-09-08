@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/Users/javier/Documents/2025/EECS 485/Project_1/env/bin/python3" "$0" "$@"
-' '''
+#!/Users/javier/Documents/2025/EECS485/Project_1/env/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
