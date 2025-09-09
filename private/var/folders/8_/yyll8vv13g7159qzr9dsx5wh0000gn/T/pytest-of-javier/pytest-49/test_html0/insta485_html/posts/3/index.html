@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<title>insta485</title>
+<html lang="en">
+    <head>
+        <style>
+            .post {
+                width: 400px;
+                border: 1px solid #ccc;
+                border-radius: 12px;
+                padding: 12px;
+                background: #fff;
+                font-family: Arial, sans-serif;
+                margin: 20px auto;
+                box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+              }
+            .post-header {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-bottom: 10px;
+            }
+            
+            .post-header-left {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            }
+        
+            .avatar {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+        
+            .name {
+              font-weight: bold;
+              font-size: 14px;
+            }
+        
+            .time {
+              font-size: 12px;
+              color: gray;
+            }
+        
+            /* Big post image */
+            .post-image {
+              width: 100%;
+              border-radius: 8px;
+              margin: 10px 0;
+            }
+        
+            /* Comment text */
+            .post-comment {
+              font-size: 14px;
+              color: #333;
+            }
+            .topbar {
+                display: flex;
+                justify-content: flex-end; /* push links to the right */
+                gap: 20px;                 /* space between links */
+                padding: 15px 20px;        /* padding around top bar */
+                background-color: #f5f5f5; /* optional: light gray bar */
+            }
+        </style>
+    </head>
+    <body>
+      <h1> <a href="/">Javi's Insta</a></h1>
+      <div class="topbar">
+        <a href="/explore/">explore</a>
+        <a href="/users/awdeorio/">awdeorio</a>
+      </div>
+      <div class="post">
+        <div class="post-header-left">
+            <a href="/users/awdeorio/">
+                <img src="/uploads/e1a7c5c32973862ee15173b0259e3efdb6a391af.jpg" alt="awdeorio" class="avatar">
+            </a>
+            <a href="/users/awdeorio/">awdeorio</a>
+        </div>
+        <a href="/posts/3/" class="time">10 minutes ago</a>
+        <img src="/uploads/9887e06812ef434d291e4936417d125cd594b38a.jpg" alt="post image" class="post-image">
+        <div class="post-comment">
+            1 like
+        </div>
+        
+        <div class="post-comment">
+            <a href="/users/awdeorio/">awdeorio</a> #chickensofinstagram
+        </div>
+        
+        <div class="post-comment">
+            <a href="/users/jflinn/">jflinn</a> I &lt;3 chickens
+        </div>
+        
+        <div class="post-comment">
+            <a href="/users/michjc/">michjc</a> Cute overload!
+        </div>
+        
+      </div>
+    </body>
+</html>

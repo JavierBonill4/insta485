@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+# insta485test
+#
+# 1. Stops on errors and prints commands
+# 2. Runs all unit tests using pytest tests/
+# 3. Runs pycodestyle insta485generator
+# 4. Runs pydocstyle insta485generator
+# 5. Runs pylint insta485generator
+# 6. Cleans up a previous insta485_html directory
+# 7. Builds a new insta485_html directory using insta485generator
+# 8. Validates hand-coded HTML in handcoded_html/ using html5validator (html5validator --ignore JAVA_TOOL_OPTIONS --root handcoded_html)
+# 9. Validates generated HTML in insta485_html/ using html5validator (html5validator --ignore JAVA_TOOL_OPTIONS --root insta485_html)
+#
+# Javier Bonilla <bjavier@umich.edu>
+
+
+# Stop on errors, print commands
+# See https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+set -Eeuo pipefail
+set -x
+
+# Tests
+pytest tests/
+pycodestyle insta485generator
+pydocstyle insta485generator
+pylint insta485generator
+
+# Clean
+rm -rf insta485_html
+
+# Build
+insta485generator insta485 -o insta485_html
+
+# Validates
+html5validator --ignore JAVA_TOOL_OPTIONS --root handcoded_html
+html5validator --ignore JAVA_TOOL_OPTIONS --root insta485_html
